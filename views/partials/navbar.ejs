@@ -1,0 +1,10 @@
+<nav style="display: flex; justify-content: center; gap: 5%;">
+    <a href="/">Home</a>
+    <% if (locals.user) { %>
+        <a href="/logout">Logout</a>
+    <%} else { %>
+        <a href="/sign-up">Sign Up</a>
+        <a href="/login">Login</a>
+    <%}%>
+
+</nav>

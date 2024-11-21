@@ -1,0 +1,12 @@
+<%-include('partials/navbar')%>
+<h1><%=currentFolder.name%></h1>
+<h3>Files: </h3>
+<%if (currentFolder.files){%>
+    <%for (file of currentFolder.files){%>
+        <p><%=file%></p>
+    <%}%>
+<%}else {%>
+    <p>Folder Is Empty.</p>
+<%}%>
+<p><small>Created At: <%=currentFolder.createdAt%></small></p><br>
+<p><%=currentFolder.files%></p>

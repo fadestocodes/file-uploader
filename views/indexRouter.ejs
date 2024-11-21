@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <%-include('partials/navbar')%>
+    <br><br>
+    <%if (user){%>
+        <h1>Welcome <%=user.username%></h1>
+        <h3>Current Path: /home</h3>
+        <form action="/upload%>" method="POST">
+            <label for="folderName"></label>
+            <input type="text" name="folderName" required >
+            <button type="submit">Create Folder</button>
+        </form>
+        <br><br>
+        <% for (folder of folders) {%>
+            <a href="/folder/<%=folder.name%>">
+                <p><%=folder.name%></p>
+            </a>
+        <%}%>
+    <%} else { %>
+        Please log in to upload files. <br>
+
+    <%}%>
+</body>
+</html>
