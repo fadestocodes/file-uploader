@@ -19,8 +19,8 @@
         <br><br>
         <% for (folder of folders) {%>
             <a href="/folder/<%=folder.name%>">
-                <p><%=folder.name%></p>
-            </a>
+                <%=folder.name%>
+            </a><br><br>
         <%}%>
     <%} else { %>
         Please log in to upload files. <br>

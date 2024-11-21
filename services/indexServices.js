@@ -64,4 +64,24 @@ async function createSubfolder(name, userId, parentId){
     })
 }
 
-module.exports = {addUser, getUserFolders, createTopLevelFolder, createSubfolder};
+async function deleteFolder( folderId ){
+    await prisma.folder.delete({
+        where : {
+            id : folderId
+        }
+    });
+};
+
+async function updateFolderName(folderId, newName){
+    await prisma.folder.update({
+        where :{
+            id : folderId
+        },
+        data :
+        {
+            name : newName
+        }
+    });
+};
+
+module.exports = {addUser, getUserFolders, createTopLevelFolder, createSubfolder, deleteFolder, updateFolderName};

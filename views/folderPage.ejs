@@ -10,3 +10,12 @@
 <%}%>
 <p><small>Created At: <%=currentFolder.createdAt%></small></p><br>
 <p><%=currentFolder.files%></p>
+<form action="/folder/<%=encodeURIComponent(currentFolder.name)%>/update" method="POST">
+    <label for="updateName">Update Folder Name: </label>
+    <input type="text" name="updateName" required>
+    <button type="submit">Update</button>
+</form>
+<form action="/folder/<%=encodeURIComponent(currentFolder.name)%>/delete" method="POST">
+    <label for="">Delete Folder: </label>
+    <button type="submit">Delete Folder</button>
+</form>
